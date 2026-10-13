@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import json
 import os
-import resource
+
+try:
+    import resource
+except ImportError:
+    resource = None  # Windows 下设为 None
+
 import sys
 
 import psutil
